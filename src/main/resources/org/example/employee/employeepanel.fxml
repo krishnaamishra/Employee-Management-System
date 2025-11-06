@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="1200.0"
+            xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.employee.EmployeePanel">
+
+   <children>
+
+      <!-- ============================================================= -->
+      <!--                 EMPLOYEE SIDEBAR SECTION                      -->
+      <!-- ============================================================= -->
+      <AnchorPane fx:id="empsidebar" prefHeight="700.0" prefWidth="347.0"
+                  styleClass="dbleft-form" stylesheets="@login.css">
+         <children>
+
+            <!-- ================= PROFILE SECTION ================= -->
+            <AnchorPane layoutX="6.0" layoutY="11.0" prefHeight="358.0" prefWidth="332.0">
+               <children>
+                  <!-- Profile Image -->
+                  <ImageView fx:id="imgdisplay"
+                             fitHeight="180.0" fitWidth="180.0"
+                             layoutX="75.0" layoutY="25.0"
+                             pickOnBounds="true" preserveRatio="true"
+                             style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);" />
+
+                  <!-- Change Profile Image Button -->
+                  <Button fx:id="changeImageBtn"
+                          layoutX="80.0" layoutY="215.0"
+                          mnemonicParsing="false"
+                          onAction="#handleChangeImage"
+                          prefHeight="28.0" prefWidth="150.0"
+                          text="Change Profile Image"
+                          style="-fx-background-color: #FFA500;
+                                 -fx-text-fill: white;
+                                 -fx-font-weight: bold;
+                                 -fx-background-radius: 15;
+                                 -fx-border-radius: 15;
+                                 -fx-font-size: 12px;" />
+
+                  <!-- Welcome Label -->
+                  <Label alignment="CENTER"
+                         layoutX="8.0" layoutY="255.0"
+                         prefHeight="31.0" prefWidth="314.0"
+                         text="Welcome">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="22.0" />
+                     </font>
+                  </Label>
+
+                  <!-- Username Label -->
+                  <Label fx:id="usernamefield"
+                         alignment="CENTER"
+                         layoutX="9.0" layoutY="288.0"
+                         prefHeight="31.0" prefWidth="314.0">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="17.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.15" green="0.45" blue="0.25" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.05" green="0.5" blue="0.75" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+
+                  <!-- Hidden Employee ID -->
+                  <Label fx:id="empid" layoutY="4.0" prefHeight="18.0" prefWidth="37.0" />
+               </children>
+            </AnchorPane>
+
+            <!-- ================= BUTTON SECTION ================= -->
+            <Button fx:id="homebtn" layoutX="84.0" layoutY="451.0"
+                    mnemonicParsing="false" onAction="#Switchforms"
+                    prefHeight="34.0" prefWidth="160.0"
+                    stylesheets="@login.css" text="Home">
+               <font><Font name="Arial Narrow" size="20.0" /></font>
+            </Button>
+
+            <Button fx:id="taskbtn" layoutX="84.0" layoutY="503.0"
+                    mnemonicParsing="false" onAction="#Switchforms"
+                    prefHeight="34.0" prefWidth="160.0"
+                    stylesheets="@login.css" text="Tasks">
+               <font><Font name="Arial Narrow" size="20.0" /></font>
+            </Button>
+
+            <Button fx:id="leaveRequestbtn" layoutX="84.0" layoutY="552.0"
+                    mnemonicParsing="false" onAction="#Switchforms"
+                    prefHeight="34.0" prefWidth="160.0"
+                    stylesheets="@login.css" text="Leave Request">
+               <font><Font name="Arial Narrow" size="20.0" /></font>
+            </Button>
+
+            <Button fx:id="salrecord" layoutX="84.0" layoutY="602.0"
+                    mnemonicParsing="false" onAction="#Switchforms"
+                    prefHeight="26.0" prefWidth="160.0"
+                    stylesheets="@login.css" text="Salary Record">
+               <font><Font name="Arial Narrow" size="20.0" /></font>
+            </Button>
+
+            <!-- ================= ATTENDANCE SECTION ================= -->
+            <Label alignment="CENTER"
+                   layoutX="10.0" layoutY="360.0"
+                   prefHeight="31.0" prefWidth="324.0"
+                   text="Mark Attendance">
+               <font><Font size="18.0" /></font>
+            </Label>
+
+            <Button fx:id="markattendace"
+                    layoutX="84.0" layoutY="399.0"
+                    mnemonicParsing="false" onAction="#markattendacebtn"
+                    prefHeight="34.0" prefWidth="160.0"
+                    stylesheets="@login.css"
+                    text="Mark Present" textFill="#0b8c2e">
+               <font><Font name="Arial Narrow" size="20.0" /></font>
+            </Button>
+
+            <!-- ================= BOTTOM SECTION ================= -->
+            <Button id="rw" layoutX="9.0" layoutY="654.0"
+                    mnemonicParsing="false" onAction="#logout"
+                    prefHeight="25.0" prefWidth="150.0"
+                    stylesheets="@login.css" text="Log Out">
+               <font><Font name="Arial Narrow" size="16.0" /></font>
+            </Button>
+
+            <Button id="gw" layoutX="182.0" layoutY="654.0"
+                    mnemonicParsing="false" onAction="#refresh"
+                    prefHeight="25.0" prefWidth="150.0"
+                    stylesheets="@login.css" text="Refresh">
+               <font><Font name="Arial Narrow" size="16.0" /></font>
+            </Button>
+
+         </children>
+      </AnchorPane>
+
+      <!-- ============================================================= -->
+      <!--                   TASK UPDATE FORM                            -->
+      <!-- ============================================================= -->
+      <AnchorPane fx:id="emptaskupdate" layoutX="366.0" layoutY="7.0"
+                  prefHeight="686.0" prefWidth="827.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="1.0" layoutY="4.0"
+                   prefHeight="45.0" prefWidth="811.0"
+                   text="Task Details And Update Task Form">
+               <font><Font name="Baskerville Old Face" size="25.0" /></font>
+            </Label>
+
+            <TableView fx:id="emptasks" layoutX="7.0" layoutY="53.0"
+                       prefHeight="502.0" prefWidth="797.0">
+               <columns>
+                  <TableColumn fx:id="taskid" prefWidth="52.8" text="Task Id" />
+                  <TableColumn fx:id="tasktitle" prefWidth="147.2" text="Task Title" />
+                  <TableColumn fx:id="taskdesc" prefWidth="376.8" text="Task Description" />
+                  <TableColumn fx:id="taskfrom" prefWidth="88.0" text="Task Status" />
+                  <TableColumn fx:id="taskstatus" prefWidth="134.4" text="Task Publish Date" />
+               </columns>
+            </TableView>
+
+            <Label layoutX="14.0" layoutY="589.0" prefHeight="31.0" prefWidth="143.0" text="Enter Task Id">
+               <font><Font name="Arial Narrow" size="22.0" /></font>
+            </Label>
+            <TextField fx:id="taskstatustexfield" layoutX="181.0" layoutY="591.0" prefHeight="26.0" prefWidth="167.0" />
+            <ComboBox fx:id="statuscombo" layoutX="390.0" layoutY="592.0" prefWidth="150.0" promptText="Select Status" />
+            <Button id="gw" layoutX="286.0" layoutY="636.0" mnemonicParsing="false"
+                    onAction="#updatetaskstatus"
+                    prefHeight="25.0" prefWidth="170.0"
+                    text="Update Status">
+               <font><Font name="Arial Narrow" size="20.0" /></font>
+            </Button>
+         </children>
+      </AnchorPane>
+
+      <!-- ============================================================= -->
+      <!--                   LEAVE REQUEST FORM                          -->
+      <!-- ============================================================= -->
+      <AnchorPane fx:id="leaverequestform" layoutX="366.0" layoutY="7.0"
+                  prefHeight="686.0" prefWidth="827.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="7.0"
+                   prefHeight="46.0" prefWidth="798.0" text="Leave Request Form">
+               <font><Font name="Berlin Sans FB" size="54.0" /></font>
+            </Label>
+
+            <TableView fx:id="leaverequestempform" layoutX="20.0" layoutY="83.0"
+                       prefHeight="299.0" prefWidth="791.0">
+               <columns>
+                  <TableColumn fx:id="leave_form_lid" prefWidth="75.0" text="Leave Id" />
+                  <TableColumn fx:id="leave_form_ltype" prefWidth="120.0" text="Leave Type" />
+                  <TableColumn fx:id="leave_form_lfrom" prefWidth="113.6" text="From" />
+                  <TableColumn fx:id="leave_form_lto" prefWidth="123.2" text="To" />
+                  <TableColumn fx:id="leave_form_lstatus" prefWidth="107.2" text="Status" />
+                  <TableColumn fx:id="leave_form_lRemarks" prefWidth="251.2" text="Remarks" />
+               </columns>
+            </TableView>
+
+            <AnchorPane layoutX="31.0" layoutY="389.0" prefHeight="287.0" prefWidth="770.0">
+               <children>
+                  <Label layoutX="108.0" layoutY="97.0" prefHeight="31.0" prefWidth="160.0" text="Select Leave Type">
+                     <font><Font size="18.0" /></font>
+                  </Label>
+                  <ComboBox fx:id="searchltype" layoutX="338.0" layoutY="100.0" prefWidth="150.0" promptText="Select" />
+                  <DatePicker fx:id="searchfrom" layoutX="112.0" layoutY="27.0" prefHeight="26.0" prefWidth="150.0" promptText="Select Starting Date" />
+                  <Label layoutY="30.0" prefHeight="18.0" prefWidth="114.0" text="From">
+                     <font><Font name="Arial Narrow" size="18.0" /></font>
+                  </Label>
+                  <Label layoutX="323.0" layoutY="30.0" prefHeight="18.0" prefWidth="114.0" text="To">
+                     <font><Font name="Arial Narrow" size="18.0" /></font>
+                  </Label>
+                  <DatePicker fx:id="searchto" layoutX="465.0" layoutY="27.0" prefHeight="26.0" prefWidth="150.0" promptText="Select Ending Date" />
+                  <Label layoutY="175.0" prefHeight="26.0" prefWidth="150.0" text="Reason For Leave">
+                     <font><Font name="Arial Narrow" size="18.0" /></font>
+                  </Label>
+                  <TextField fx:id="searchreason" alignment="TOP_LEFT" layoutX="181.0" layoutY="152.0"
+                             prefHeight="72.0" prefWidth="398.0" />
+                  <Button id="gw" layoutX="321.0" layoutY="237.0" mnemonicParsing="false"
+                          onAction="#AddLeaveRequest" text="Submit Request">
+                     <font><Font name="Arial Narrow" size="20.0" /></font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+
+      <!-- ============================================================= -->
+      <!--                   HOME FORM (NOTES)                           -->
+      <!-- ============================================================= -->
+      <AnchorPane fx:id="homeform" layoutX="347.0" layoutY="7.0"
+                  prefHeight="686.0" prefWidth="846.0">
+         <children>
+            <Label alignment="CENTER" layoutX="23.0" layoutY="10.0"
+                   prefHeight="46.0" prefWidth="811.0" text="Employee Notes Keeping">
+               <font><Font name="Bell MT" size="42.0" /></font>
+            </Label>
+            <TextArea layoutX="23.0" layoutY="88.0" prefHeight="586.0" prefWidth="798.0" />
+         </children>
+      </AnchorPane>
+
+      <!-- ============================================================= -->
+      <!--                   SALARY RECORD FORM                          -->
+      <!-- ============================================================= -->
+      <AnchorPane fx:id="salaryRecordform" layoutX="353.0" layoutY="7.0"
+                  prefHeight="686.0" prefWidth="834.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="33.0"
+                   prefHeight="62.0" prefWidth="814.0" text="Salary Report">
+               <font><Font name="Baskerville Old Face" size="53.0" /></font>
+            </Label>
+
+            <Label fx:id="salgross" layoutX="21.0" layoutY="172.0"
+                   prefHeight="50.0" prefWidth="350.0" wrapText="true">
+               <font><Font name="Baskerville Old Face" size="27.0" /></font>
+            </Label>
+
+            <Label fx:id="salhealth" layoutX="439.0" layoutY="172.0"
+                   prefHeight="50.0" prefWidth="370.0" wrapText="true">
+               <font><Font name="Baskerville Old Face" size="27.0" /></font>
+            </Label>
+
+            <Label fx:id="saltax" layoutX="14.0" layoutY="331.0"
+                   prefHeight="50.0" prefWidth="318.0" wrapText="true">
+               <font><Font name="Baskerville Old Face" size="27.0" /></font>
+            </Label>
+
+            <Label fx:id="saltravel" layoutX="463.0" layoutY="331.0"
+                   prefHeight="50.0" prefWidth="370.0" wrapText="true">
+               <font><Font name="Baskerville Old Face" size="27.0" /></font>
+            </Label>
+
+            <Label fx:id="salnet" alignment="CENTER" layoutX="-4.0" layoutY="509.0"
+                   prefHeight="50.0" prefWidth="827.0" wrapText="true">
+               <font><Font name="Baskerville Old Face" size="27.0" /></font>
+            </Label>
+
+            <Button id="gw" fx:id="generatesal"
+                    layoutX="196.0" layoutY="118.0"
+                    mnemonicParsing="false" onAction="#salaryRecords"
+                    prefHeight="35.0" prefWidth="211.0"
+                    text="Get Salary Report">
+               <font><Font name="Arial Rounded MT Bold" size="19.0" /></font>
+            </Button>
+
+            <Button id="rw" fx:id="generatesal1"
+                    layoutX="523.0" layoutY="118.0"
+                    mnemonicParsing="false" onAction="#clearsalrecord"
+                    prefHeight="35.0" prefWidth="211.0"
+                    text="Clear Salary Report">
+               <font><Font name="Arial Rounded MT Bold" size="19.0" /></font>
+            </Button>
+         </children>
+      </AnchorPane>
+
+   </children>
+</AnchorPane>

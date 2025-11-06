@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.employee.dashboard">
+   <children>
+      <AnchorPane layoutX="7.0" prefHeight="750.0" prefWidth="330.0" styleClass="dbleft-form" stylesheets="@login.css">
+         <children>
+            <Label fx:id="uname1" alignment="CENTER" layoutX="-1.0" layoutY="78.0" prefHeight="62.0" prefWidth="345.0" text="Welcome ," wrapText="true">
+               <font>
+                  <Font name="Bodoni MT Bold" size="28.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" proportional="false" startX="0.9280302091078325" startY="0.05681829019026327">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8105263113975525" green="0.06904483586549759" blue="0.06904483586549759" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9946164199192464">
+                           <color>
+                              <Color red="0.5812137722969055" green="0.09387914091348648" blue="0.5894736647605896" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.21656043827533722" green="0.15839999914169312" blue="0.36000001430511475" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label fx:id="uname" alignment="CENTER" layoutX="-1.0" layoutY="136.0" prefHeight="46.0" prefWidth="345.0" wrapText="true">
+               <font>
+                  <Font name="Bodoni MT Bold" size="28.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" proportional="false" startX="0.9280302091078325" startY="0.05681829019026327">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8105263113975525" green="0.06904483586549759" blue="0.06904483586549759" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9946164199192464">
+                           <color>
+                              <Color red="0.5812137722969055" green="0.09387914091348648" blue="0.5894736647605896" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.21656043827533722" green="0.15839999914169312" blue="0.36000001430511475" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="-2.0" prefHeight="62.0" prefWidth="346.0" text="Employee Management System" textFill="#112048">
+               <font>
+                  <Font name="Berlin Sans FB" size="22.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="-5.0" layoutY="237.0" prefHeight="465.0" prefWidth="354.0" stylesheets="@login.css">
+               <children>
+                  <Button fx:id="homebtn" layoutX="78.0" layoutY="38.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="HOME" />
+                  <Button fx:id="addempbtn" layoutX="78.0" layoutY="80.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="ADD EMPLOYEE" />
+                  <Button fx:id="salarybtn" layoutX="78.0" layoutY="122.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="EMPLOYEE SALARY" />
+                  <Button id="rw" fx:id="logout" layoutX="39.0" layoutY="411.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="95.0" stylesheets="@login.css" text="Log Out">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="update_empbtn" layoutX="75.0" layoutY="164.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="Update Employee Records" />
+                  <Button fx:id="updateTasks" layoutX="75.0" layoutY="206.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="Assign Task" />
+                  <Button id="gw" fx:id="refreshhome" layoutX="204.0" layoutY="411.0" mnemonicParsing="false" onAction="#refresh" prefHeight="26.0" prefWidth="95.0" stylesheets="@login.css" text="Refresh">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="leave_formbtn" layoutX="78.0" layoutY="246.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="Leave Requests" />
+                  <Button fx:id="salaryrecordbtn" layoutX="78.0" layoutY="286.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" stylesheets="@login.css" text="Salary Record" />
+                  <Button fx:id="empuserpassbtn" layoutX="75.0" layoutY="330.0" mnemonicParsing="false" onAction="#SwitchForm" prefHeight="26.0" prefWidth="214.0" text="Employee Credentials" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="home_form" layoutX="357.0" layoutY="-1.0" prefHeight="750.0" prefWidth="842.0" stylesheets="@login.css">
+         <children>
+            <AnchorPane layoutX="7.0" layoutY="6.0" prefHeight="242.0" prefWidth="826.0" stylesheets="@login.css">
+               <children>
+                  <AnchorPane layoutX="10.0" layoutY="8.0" prefHeight="223.0" prefWidth="250.0" styleClass="card" stylesheets="@login.css">
+                     <children>
+                        <Label alignment="CENTER" layoutX="2.0" layoutY="24.0" prefHeight="34.0" prefWidth="242.0" text="Total Employees">
+                           <font>
+                              <Font name="Baskerville Old Face" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="totalemplabel" alignment="CENTER" layoutX="83.0" layoutY="112.0" prefHeight="81.0" prefWidth="95.0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="286.0" layoutY="8.0" prefHeight="223.0" prefWidth="250.0" styleClass="card" stylesheets="@login.css">
+                     <children>
+                        <Label alignment="CENTER" layoutX="4.0" layoutY="24.0" prefHeight="34.0" prefWidth="242.0" text="Present Employees">
+                           <font>
+                              <Font name="Baskerville Old Face" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="presentemp" alignment="CENTER" layoutX="77.0" layoutY="112.0" prefHeight="81.0" prefWidth="95.0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="562.0" layoutY="8.0" prefHeight="223.0" prefWidth="250.0" styleClass="card" stylesheets="@login.css">
+                     <children>
+                        <Label alignment="CENTER" layoutX="5.0" layoutY="24.0" prefHeight="34.0" prefWidth="242.0" text="Inactive Employees">
+                           <font>
+                              <Font name="Baskerville Old Face" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="absentemps" alignment="CENTER" layoutX="77.0" layoutY="112.0" prefHeight="81.0" prefWidth="95.0">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="38.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="17.0" layoutY="252.0" prefHeight="28.0" prefWidth="802.0" />
+            <Label layoutX="17.0" layoutY="249.0" prefHeight="26.0" prefWidth="446.0" text="Notes Keeping">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="33.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.7473683953285217" green="0.31555554270744324" blue="0.31555554270744324" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.13277192413806915" green="0.046315789222717285" blue="0.23157894611358643" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextArea layoutX="14.0" layoutY="298.0" prefHeight="446.0" prefWidth="814.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="add_emp_form" layoutX="356.0" layoutY="-3.0" prefHeight="750.0" prefWidth="842.0" visible="false">
+         <children>
+            <AnchorPane layoutX="4.0" layoutY="9.0" prefHeight="310.0" prefWidth="834.0">
+               <children>
+                  <TableView fx:id="add_emptable" layoutX="-1.0" layoutY="2.0" onSort="#initialize" prefHeight="356.0" prefWidth="834.0">
+                    <columns>
+                      <TableColumn fx:id="add_eid" prefWidth="96.0" text="Employee ID" />
+                      <TableColumn fx:id="empadd_fname" prefWidth="91.20001220703125" text="First Name" />
+                        <TableColumn fx:id="add_lname" prefWidth="102.4000244140625" text="Last Name" />
+                        <TableColumn fx:id="add_contact" prefWidth="99.20001220703125" text="Contact" />
+                        <TableColumn fx:id="add_mail" prefWidth="140.0" text="Mail-ID" />
+                        <TableColumn fx:id="add_gender" prefWidth="58.4000244140625" text="Gender" />
+                        <TableColumn fx:id="add_designation" prefWidth="148.7999267578125" text="Designation" />
+                        <TableColumn fx:id="add_doj" prefWidth="99.2000732421875" text="DOJ" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="2.0" layoutY="373.0" prefHeight="371.0" prefWidth="834.0" stylesheets="@login.css">
+               <children>
+                  <AnchorPane layoutX="511.0" layoutY="26.0" prefHeight="246.0" prefWidth="307.0">
+                     <children>
+                        <ImageView fx:id="add_empimage" fitHeight="259.0" fitWidth="307.0" pickOnBounds="true" />
+                     </children>
+                  </AnchorPane>
+                  <Button id="rw" fx:id="add_empclearbtn" layoutX="384.0" layoutY="334.0" mnemonicParsing="false" onAction="#clear" prefHeight="34.0" prefWidth="86.0" stylesheets="@login.css" text="CLEAR" />
+                  <Button id="gw" fx:id="add_empaddbtn" layoutX="184.0" layoutY="334.0" mnemonicParsing="false" onAction="#getdata" prefHeight="34.0" prefWidth="86.0" stylesheets="@login.css" text="ADD" />
+                  <Button id="gw" fx:id="add_empimportbtn" layoutX="541.0" layoutY="287.0" mnemonicParsing="false" onAction="#importimage" prefHeight="31.0" prefWidth="258.0" stylesheets="@login.css" text="Import" />
+                  <Label layoutY="58.0" prefHeight="30.0" prefWidth="135.0" text="First Name">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_fname" layoutX="142.0" layoutY="62.0" prefHeight="20.0" prefWidth="150.0" />
+                  <Label layoutY="114.0" prefHeight="30.0" prefWidth="135.0" text="Last Name">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="166.0" prefHeight="30.0" prefWidth="135.0" text="Contact">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_empcontact" layoutX="142.0" layoutY="170.0" prefHeight="20.0" prefWidth="150.0" />
+                  <Label layoutY="220.0" prefHeight="30.0" prefWidth="135.0" text="Maild-ID">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_empmail" layoutX="142.0" layoutY="224.0" prefHeight="20.0" prefWidth="150.0" />
+                  <ComboBox fx:id="add_empgender" layoutX="331.0" layoutY="116.0" prefHeight="20.0" prefWidth="150.0" promptText="Select Gender" visibleRowCount="3" />
+                  <ComboBox fx:id="add_empdesignation" layoutX="331.0" layoutY="169.0" prefHeight="20.0" prefWidth="150.0" promptText="Select Designation" />
+                  <DatePicker fx:id="add_empdoj" editable="false" layoutX="331.0" layoutY="62.0" prefHeight="20.0" prefWidth="150.0" promptText="Select Date of Joining" />
+                  <Label layoutY="274.0" prefHeight="30.0" prefWidth="135.0" text="Salary">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="add_empsalary" layoutX="142.0" layoutY="278.0" prefHeight="20.0" prefWidth="150.0" />
+                  <TextField fx:id="add_emplname" layoutX="142.0" layoutY="116.0" prefHeight="20.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sal_form" layoutX="358.0" layoutY="4.0" prefHeight="740.0" prefWidth="834.0" stylesheets="@login.css" visible="false">
+         <children>
+            <AnchorPane fx:id="salary_form" layoutX="3.0" layoutY="8.0" prefHeight="730.0" prefWidth="834.0">
+               <children>
+                  <TableView fx:id="salary_forms" layoutX="4.0" layoutY="-5.0" onSort="#initialize" prefHeight="599.0" prefWidth="826.0">
+                    <columns>
+                      <TableColumn fx:id="salary_col_eid" prefWidth="113.60000610351562" text="Employee ID" />
+                      <TableColumn fx:id="salary_col_fname" prefWidth="186.40005493164062" text="First Name" />
+                        <TableColumn fx:id="salary_col_lname" prefWidth="178.4000244140625" text="Last Name" />
+                        <TableColumn fx:id="salary_col_designation" prefWidth="190.39996337890625" text="Designation" />
+                        <TableColumn fx:id="salary_col_salary" prefWidth="155.2000732421875" text="Salary" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="salary_eid" layoutX="195.0" layoutY="613.0" prefHeight="26.0" prefWidth="134.0" />
+                  <Label layoutX="41.0" layoutY="613.0" prefHeight="26.0" prefWidth="95.0" text="Employee Id">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="416.0" layoutY="613.0" prefHeight="26.0" prefWidth="86.0" text="Salary">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="salary_salary" layoutX="529.0" layoutY="613.0" prefHeight="26.0" prefWidth="134.0" />
+                  <Button id="gw" fx:id="salary_updatebtn" layoutX="302.0" layoutY="684.0" mnemonicParsing="false" onAction="#Update_salbtn" prefHeight="26.0" prefWidth="86.0" stylesheets="@login.css" text="Update" />
+                  <Button id="rw" fx:id="salary_clearbtn" layoutX="460.0" layoutY="684.0" mnemonicParsing="false" onAction="#sal_clearbtn" prefHeight="26.0" prefWidth="86.0" stylesheets="@login.css" text="Clear" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Updaterecords" layoutX="358.0" layoutY="4.0" prefHeight="740.0" prefWidth="842.0" visible="false">
+         <children>
+            <AnchorPane layoutY="86.0" prefHeight="322.0" prefWidth="842.0">
+               <children>
+                  <TextField fx:id="update_fname" layoutX="210.0" layoutY="38.0" prefHeight="26.0" prefWidth="214.0" />
+                  <Label layoutY="37.0" text="Employee first Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="update_desig" layoutX="210.0" layoutY="90.0" prefHeight="26.0" prefWidth="214.0" />
+                  <DatePicker fx:id="update_doj" layoutX="609.0" layoutY="38.0" prefHeight="26.0" prefWidth="214.0" />
+                  <TextField fx:id="update_lname" layoutX="210.0" layoutY="142.0" prefHeight="26.0" prefWidth="214.0" />
+                  <TextField fx:id="update_mail" layoutX="210.0" layoutY="246.0" prefHeight="26.0" prefWidth="214.0" />
+                  <TextField fx:id="update_cont" layoutX="609.0" layoutY="90.0" prefHeight="26.0" prefWidth="214.0" />
+                  <ComboBox fx:id="update_gender" layoutX="210.0" layoutY="194.0" prefHeight="26.0" prefWidth="214.0" />
+                  <Label layoutY="89.0" text="Employee Designation">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="37.0" prefHeight="28.0" prefWidth="166.0" text="Employee DOJ">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="145.0" prefHeight="28.0" prefWidth="188.0" text="Employee Last Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="4.0" layoutY="246.0" prefHeight="18.0" prefWidth="165.0" text="Employee Mail">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="446.0" layoutY="90.0" prefHeight="28.0" prefWidth="158.0" text="Employee Contact">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="194.0" prefHeight="28.0" prefWidth="188.0" text="Employee gender">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="30.0" layoutY="411.0" prefHeight="32.0" prefWidth="317.0" text="Enter Employee ID">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <TextField fx:id="update_searcheid" layoutX="338.0" layoutY="420.0" prefHeight="32.0" prefWidth="242.0" />
+            <Button id="gw" fx:id="update_recordbtn" layoutX="30.0" layoutY="574.0" mnemonicParsing="false" onAction="#UpdateRecordsBTN" prefHeight="26.0" prefWidth="232.0" stylesheets="@login.css" text="Update Record" />
+            <Button id="rw" fx:id="delet_recordbtn" layoutX="570.0" layoutY="574.0" mnemonicParsing="false" onAction="#deleterecord" prefHeight="26.0" prefWidth="232.0" stylesheets="@login.css" text="Delete Record" />
+            <Button fx:id="updateclear" layoutX="300.0" layoutY="574.0" mnemonicParsing="false" onAction="#updateclear" prefHeight="26.0" prefWidth="232.0" stylesheets="@login.css" text="Clear" />
+            <Button fx:id="update_eidsearch" layoutX="338.0" layoutY="480.0" mnemonicParsing="false" onAction="#Update_Functionalities" prefHeight="26.0" prefWidth="232.0" stylesheets="@login.css" text="Search" />
+            <Label alignment="CENTER" layoutX="16.0" layoutY="10.0" prefHeight="70.0" prefWidth="814.0" text="Update Employee Record Form">
+               <font>
+                  <Font name="Baskerville Old Face" size="36.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8526315689086914" green="0.22421053051948547" blue="0.22421053051948547" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006729475100942127">
+                           <color>
+                              <Color red="0.8526315689086914" green="0.22421053051948547" blue="0.22421053051948547" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.2755165696144104" green="0.29830798506736755" blue="0.38947367668151855" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Update_taskforms" layoutX="366.0" layoutY="3.0" prefHeight="740.0" prefWidth="826.0" visible="false">
+         <children>
+            <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="435.0" prefWidth="814.0">
+               <children>
+                  <TableView fx:id="task_form" layoutX="8.0" layoutY="4.0" onSort="#initialize" prefHeight="377.0" prefWidth="794.0">
+                    <columns>
+                      <TableColumn fx:id="task_empid" prefWidth="74.4000244140625" text="Employee Id" />
+                      <TableColumn fx:id="task_id" prefWidth="80.79998779296875" text="Task ID" />
+                        <TableColumn fx:id="task_title" prefWidth="149.60003662109375" text="Task Title " />
+                        <TableColumn fx:id="task_description" prefWidth="274.39996337890625" text="Task Description" />
+                        <TableColumn fx:id="task_status" prefWidth="102.40008544921875" text="Task Status" />
+                        <TableColumn fx:id="task_date" prefWidth="111.19989013671875" text="Task Post Date" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="28.0" layoutY="397.0" prefHeight="34.0" prefWidth="150.0" text="Enter Task ID">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="deletetasksearch" layoutX="187.0" layoutY="402.0" prefHeight="26.0" prefWidth="158.0" />
+                  <Button id="rw" fx:id="deletetaskbtn" layoutX="368.0" layoutY="401.0" mnemonicParsing="false" onAction="#DeleteTask" prefHeight="31.0" prefWidth="110.0" stylesheets="@login.css" text="Delete Task">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="17.0" layoutY="439.0" prefHeight="286.0" prefWidth="794.0">
+               <children>
+                  <Label layoutX="39.0" layoutY="24.0" prefHeight="31.0" prefWidth="188.0" text="Enter Employee ID">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="69.0" prefHeight="31.0" prefWidth="188.0" text="Task Title">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="114.0" prefHeight="31.0" prefWidth="188.0" text="Task Description">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="task_eid" layoutX="248.0" layoutY="27.0" prefHeight="26.0" prefWidth="188.0" />
+                  <TextField fx:id="task_searchtitle" layoutX="248.0" layoutY="71.0" prefHeight="26.0" prefWidth="307.0" />
+                  <TextField fx:id="task_searchdescription" alignment="TOP_LEFT" layoutX="248.0" layoutY="116.0" prefHeight="93.0" prefWidth="404.0" />
+                  <Button id="gw" fx:id="assigntaskbtn" layoutX="238.0" layoutY="225.0" mnemonicParsing="false" onAction="#assigntasks" prefHeight="20.0" prefWidth="174.0" stylesheets="@login.css" text="Assign Task">
+                     <font>
+                        <Font name="Bodoni MT" size="22.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clear_taskbtn" layoutX="468.0" layoutY="225.0" mnemonicParsing="false" onAction="#tasksclear" prefHeight="20.0" prefWidth="174.0" stylesheets="@login.css" text="Clear ">
+                     <font>
+                        <Font name="Bodoni MT" size="22.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Request_form" layoutX="358.0" prefHeight="750.0" prefWidth="850.0" visible="false">
+         <children>
+            <AnchorPane prefHeight="750.0" prefWidth="842.0" />
+            <TableView fx:id="leave_board" layoutX="1.0" layoutY="1.0" onSort="#initialize" prefHeight="590.0" prefWidth="826.0">
+               <columns>
+                  <TableColumn fx:id="leave_eid" prefWidth="68.0" text="Emloyee Id" />
+                  <TableColumn fx:id="leave_lid" prefWidth="71.19998168945312" text="Leave ID" />
+                  <TableColumn fx:id="leave_ltype" prefWidth="93.60006713867188" text="Leave Type" />
+                  <TableColumn fx:id="leave_reason" prefWidth="205.60003662109375" text="Reason" />
+                  <TableColumn fx:id="leave_from" minWidth="0.0" prefWidth="100.79998779296875" text="From" />
+                  <TableColumn fx:id="leave_to" prefWidth="110.39996337890625" text="To" />
+                  <TableColumn fx:id="leave_status" minWidth="4.0" prefWidth="175.99993896484375" text="Staus" />
+               </columns>
+            </TableView>
+            <AnchorPane layoutX="7.0" layoutY="592.0" prefHeight="151.0" prefWidth="826.0">
+               <children>
+                  <Label layoutX="59.0" layoutY="28.0" prefHeight="34.0" prefWidth="144.0" text="Enter Leave ID">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="leavegetlid" layoutX="221.0" layoutY="31.0" />
+                  <ComboBox fx:id="leave_actioncombo" layoutX="435.0" layoutY="34.0" onAction="#initialize" prefWidth="150.0" promptText="Select Action" />
+                  <Button id="gw" fx:id="Update_leavebtn" layoutX="288.0" layoutY="84.0" mnemonicParsing="false" onAction="#update_leave" prefHeight="26.0" prefWidth="144.0" stylesheets="@login.css" text="Update Leave Status" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="salaryRecordform" layoutX="366.0" layoutY="14.0" prefHeight="723.0" prefWidth="834.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="8.0" layoutY="33.0" prefHeight="62.0" prefWidth="814.0" text="Salary Record">
+               <font>
+                  <Font name="Baskerville Old Face" size="53.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5796460261387107" centerY="0.21590909090909088" cycleMethod="REFLECT" focusAngle="-38.66" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8100000023841858" green="0.7033500075340271" blue="0.17010000348091125" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.15953215956687927" green="0.3111734986305237" blue="0.6947368383407593" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <Label layoutX="29.0" layoutY="164.0" prefHeight="62.0" prefWidth="202.0" text="Enter Employee ID">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="searchsalid" layoutX="288.0" layoutY="183.0" prefHeight="31.0" prefWidth="188.0" />
+            <Button id="gw" layoutX="144.0" layoutY="253.0" mnemonicParsing="false" onAction="#salaryRecords" prefHeight="26.0" prefWidth="188.0" stylesheets="@login.css" text="Search Record" />
+            <Label fx:id="salgross" layoutX="14.0" layoutY="382.0" prefHeight="50.0" prefWidth="350.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="salhealth" layoutX="439.0" layoutY="382.0" prefHeight="50.0" prefWidth="370.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="saltax" layoutX="14.0" layoutY="478.0" prefHeight="50.0" prefWidth="318.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="saltravel" layoutX="439.0" layoutY="478.0" prefHeight="50.0" prefWidth="370.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="salnet" alignment="CENTER" layoutX="10.0" layoutY="610.0" prefHeight="64.0" prefWidth="814.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="27.0" />
+               </font>
+            </Label>
+            <Button id="rw" layoutX="439.0" layoutY="253.0" mnemonicParsing="false" onAction="#clearsalrecord" prefHeight="26.0" prefWidth="188.0" stylesheets="@login.css" text="Clear Record" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="empuserpass" layoutX="361.0" layoutY="3.0" prefHeight="740.0" prefWidth="842.0" visible="false">
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="14.0" prefHeight="62.0" prefWidth="826.0" text="Employee Credentials form">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="48.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.08771929889917374" green="0.31578946113586426" blue="0.23596490919589996" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.75789475440979" green="0.44070175290107727" blue="0.44070175290107727" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="searchforempuserpass" layoutX="266.0" layoutY="148.0" prefHeight="31.0" prefWidth="188.0" />
+            <Label layoutX="30.0" layoutY="150.0" prefHeight="28.0" prefWidth="202.0" text="Enter Employee Id">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="232.0" layoutY="224.0" mnemonicParsing="false" onAction="#getuserandpass" prefHeight="34.0" prefWidth="188.0" text="Get Creadentials">
+               <font>
+                  <Font name="Baskerville Old Face" size="17.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.028771929442882538" green="0.8631578683853149" blue="0.09830409288406372" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.010136452503502369" green="0.13684210181236267" blue="0.022807016968727112" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Button>
+            <Button layoutX="509.0" layoutY="225.0" mnemonicParsing="false" onAction="#clearcredentials" prefHeight="26.0" prefWidth="174.0" text="Clear Creadentials">
+               <font>
+                  <Font name="Baskerville Old Face" size="17.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.08518518507480621" blue="0.08518518507480621" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.14327485859394073" green="0.15789473056793213" blue="0.1461988240480423" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Button>
+            <Label fx:id="setempusername" layoutX="15.0" layoutY="370.0" prefHeight="82.0" prefWidth="802.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="34.0" />
+               </font>
+            </Label>
+            <Label fx:id="setemppass" layoutX="15.0" layoutY="505.0" prefHeight="82.0" prefWidth="802.0" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

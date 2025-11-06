@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.employee.HelloController">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="99.0" prefHeight="574.0" prefWidth="584.0" styleClass="left-form" stylesheets="@login.css">
+         <children>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="99.0" prefHeight="74.0" prefWidth="570.0" text="For Employee">
+               <font>
+                  <Font name="Bell MT" size="61.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.2573099434375763" green="0.7894737124443054" blue="0.6032163500785828" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.8311890959739685" green="0.8631578683853149" blue="0.8445094227790833" opacity="0.800000011920929" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="empusername" layoutX="112.0" layoutY="265.0" prefHeight="38.0" prefWidth="342.0" promptText="Username" />
+            <PasswordField fx:id="emppass" layoutX="112.0" layoutY="375.0" prefHeight="38.0" prefWidth="342.0" promptText="Password" />
+            <Button id="gw" fx:id="emplogin" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#loginemp" prefHeight="26.0" prefWidth="147.0" stylesheets="@login.css" text="Login">
+               <font>
+                  <Font name="Bodoni MT Black" size="29.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="mainform" layoutX="607.0" layoutY="100.0" prefHeight="574.0" prefWidth="542.0" styleClass="card" stylesheets="@login.css">
+         <children>
+            <Label alignment="CENTER" layoutX="3.0" layoutY="99.0" prefHeight="74.0" prefWidth="578.0" text="For Admin">
+               <font>
+                  <Font name="Bell MT" size="61.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.07680000364780426" green="0.47999998927116394" blue="0.24480000138282776" opacity="0.8017933368682861" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextField fx:id="username" layoutX="112.0" layoutY="265.0" onAction="#loginadmin" prefHeight="38.0" prefWidth="342.0" promptText="Username" />
+            <Button id="gw" fx:id="loginbtn" layoutX="226.0" layoutY="469.0" mnemonicParsing="false" onAction="#loginadmin" prefHeight="26.0" prefWidth="147.0" text="Login">
+               <font>
+                  <Font name="Bodoni MT Black" size="29.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.11048603057861328" green="0.11578947305679321" blue="0.10978557169437408" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Button>
+            <PasswordField fx:id="passwd" layoutX="112.0" layoutY="375.0" onAction="#loginadmin" prefHeight="38.0" prefWidth="342.0" promptText="Password" />
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="7.0" prefHeight="74.0" prefWidth="1190.0" text="Employee Management System" textFill="#ff7a38fa">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="37.0" />
+         </font>
+      </Label>
+      <Button layoutX="291.0" layoutY="693.0" mnemonicParsing="false" onAction="#AboutDevoloper" prefHeight="47.0" prefWidth="257.0" stylesheets="@login.css" text="About Developer">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="631.0" layoutY="691.0" mnemonicParsing="false" onAction="#aboutems" prefHeight="47.0" prefWidth="304.0" stylesheets="@login.css" text="About EMS">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="25.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

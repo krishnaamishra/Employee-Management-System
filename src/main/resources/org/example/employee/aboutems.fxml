@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.employee.togles">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="720.0" prefWidth="1166.0">
+         <children>
+            <TextArea editable="false" layoutX="37.0" layoutY="92.0" prefHeight="556.0" prefWidth="1114.0" text="Employee Management System&#10;The Employee Management System is a comprehensive desktop application designed to streamline and simplify employee management tasks within an organization. Developed using Java, JavaFX, FXML, and MySQL, the system provides a user-friendly interface and robust functionality to manage employee records efficiently.&#10;&#10;The application allows users to perform essential operations such as adding, updating, deleting, and viewing employee information. It ensures data integrity and security by leveraging MySQL for database management and implements modern design principles for a seamless user experience.&#10;&#10;Key features of the system include:&#10;&#10;Employee Record Management: Easy input and modification of employee details like name, designation, salary, and contact information.&#10;Responsive Design: A clean and intuitive interface built using JavaFX and FXML, ensuring accessibility for users with minimal technical expertise.&#10;The Employee Management System serves as a reliable tool for organizations to enhance their HR operations, minimize manual efforts, and maintain accurate records. The project demonstrates the developer’s ability to integrate programming, database management, and design into a cohesive and functional application." wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+               </font>
+            </TextArea>
+            <Button layoutX="437.0" layoutY="653.0" mnemonicParsing="false" onAction="#logout" prefHeight="46.0" prefWidth="318.0" stylesheets="@login.css" text="Back To Main">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="33.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="31.0" prefHeight="46.0" prefWidth="1144.0" text="About E.M.S">
+         <font>
+            <Font name="Bauhaus 93" size="61.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8736842274665833" green="0.3055737614631653" blue="0.1326705664396286" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.30877193808555603" green="0.39859649538993835" blue="0.75789475440979" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

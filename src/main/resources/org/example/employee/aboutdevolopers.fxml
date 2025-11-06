@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="750.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.employee.togles">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="29.0" prefHeight="592.0" prefWidth="1171.0">
+         <children>
+            <Label alignment="CENTER" layoutX="16.0" layoutY="21.0" prefHeight="70.0" prefWidth="1134.0" text="About Devolopers">
+               <font>
+                  <Font name="Bauhaus 93" size="61.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.8736842274665833" green="0.3055737614631653" blue="0.1326705664396286" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.30877193808555603" green="0.39859649538993835" blue="0.75789475440979" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </Label>
+            <TextArea editable="false" layoutX="19.0" layoutY="121.0" prefHeight="450.0" prefWidth="1134.0" text="The project was developed by Sumit Pandey and Owash Ali, dedicated and talented software developers currently pursuing their Bachelor of Technology (B.Tech) in Electronics and Communication Engineering (ECE) from Dr. Akhilesh Das Gupta Institute of Professional Studies, where they are in their final year of study.&#10;&#10; Both developers possess strong technical expertise in programming languages such as Java and SQL, along with practical experience in development frameworks like JavaFX. This project, the Employee Management System, showcases their ability to collaboratively design and develop user-friendly software applications with robust backend integration. It highlights their proficiency in modern software development practices, particularly in database management using MySQL and building intuitive graphical interfaces with FXML.&#10;&#10; As developers, Sumit Pandey and Owash Ali are committed to creating applications that are efficient, scalable, and secure. They emphasize writing clean and maintainable code, ensuring that their projects meet high standards of quality, functionality, and user experience. This project stands as a testament to their technical skills, teamwork, and problem-solving abilities, reflecting their passion for applying engineering knowledge to real-world software solutions." wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB" size="24.0" />
+               </font>
+            </TextArea>
+
+
+         </children>
+      </AnchorPane>
+      <Button layoutX="455.0" layoutY="659.0" mnemonicParsing="false" onAction="#logout" prefHeight="62.0" prefWidth="318.0" stylesheets="@login.css" text="Back To Main">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="33.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
